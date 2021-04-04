@@ -6,8 +6,7 @@
     
     "1225835449379258400": [
         "isSmear",
-        "isUkraine",
-        "isIllegal"
+        "isUkraine"
     ],
     
     "1319488376202879000": [
@@ -28,12 +27,10 @@
         "isFabrication",
         "isLie",
         "isOpposite",
-        "isIKnowYouAreButWhatAmI",
-        "isDomestic"
+        "isIKnowYouAreButWhatAmI"
     ],
     
     "1325889532840063000": [
-        "isDomestic",
         "isLie",
         "isElection"
     ],
@@ -404,7 +401,7 @@
     ],
     
     "1346686979325522000": [
-        "isPreemtive",
+        "isPreemptive",
         "isLie",
         "isElection"
     ],
@@ -511,7 +508,7 @@
         "isLie",
         "isOpposite",
         "isElection",
-        "isPreemtive"
+        "isPreemptive"
     ],
     
     "1329781868028432400": [
@@ -771,7 +768,7 @@
         "isElection",
         "isLie",
         "isSmear",
-        "isPreemtive"
+        "isPreemptive"
     ],
     
     "1326354989778952200": [
@@ -886,7 +883,7 @@
     "1330137267680186400": [
         "isElection",
         "isLie",
-        "isPreemtive"
+        "isPreemptive"
     ],
     
     "1332352538855747600": [
@@ -899,7 +896,7 @@
     ],
     
     "1330137741078696000": [
-        "isPreemtive",
+        "isPreemptive",
         "isElection",
         "isLie"          
     ],
