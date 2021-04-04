@@ -936,5 +936,249 @@
         "isSmear",
         "isNickname",
         "isLie"
-    ] 
+    ],
+    
+     "1329145487325339600": [
+        "isLie",
+        "isElection"
+    ],
+    
+    "1320489234441130000": [
+        "isElection"
+    ],
+    
+    "1330148622898516000": [
+        "isLie",
+        "isElection"        
+    ],
+    
+    "1320490697766637600": [
+        "isElection",
+        "isSmear"           
+    ],
+    
+    "1332552283553476600": [
+        "isLie",
+        "isElection"         
+    ],
+    
+    "1320490757241872400": [
+        "isElection",
+        "isNickname"
+    ],
+    
+    "1330237801066066000": [
+        "isLie",
+        "isElection"             
+    ],
+    
+    "1326630618831130600": [
+        "isLie",
+        "isElection"          
+    ],
+    
+    "1326661996683677700": [
+        "isLie",
+        "isElection"          
+    ],
+    
+    "1326662184403865600": [
+        "isElection"
+    ],
+    
+    "1320506563711410200": [
+        "isElection"
+    ],
+    
+    "1330248268656357400": [
+        "isLie",
+        "isElection"         
+    ],
+    
+    "1326673298692972500": [
+        "isLie",
+        "isElection",
+        "isSmear",
+        "isNickname"
+    ],
+    
+    "1330259856662655000": [
+        "isLie",
+        "isElection"        
+    ],
+    
+    "1332776310196883500": [
+        "isLie",
+        "isElection"         
+    ],
+    
+    "1330273053104885800": [
+        "isPandemic",
+        "isSmear"
+    ],
+    
+    "1332778938121203700": [
+        "isLie",
+        "isElection",
+        "isSmear"     
+    ],
+    
+    "1317175662550093800": [
+        "isPandemic"
+    ],
+    
+    "1317175638420238300": [
+        "isPandemic"
+    ],
+    
+    "1316961326695174100": [
+        "isSmear"
+    ],
+    
+    "1316961083790418000": [
+        "isElection",
+        "isSmear"
+    ],
+    
+    "1332788716818010000": [
+        "isElection",
+        "isLie"
+    ],
+    
+    "1326679385966047200": [
+        "isElection",
+        "isLie",
+        "isSmear",
+        "isNickname"
+    ],
+    
+    "1317055468926283800": [
+        "isElection"
+    ],
+
+    "1317053924096999400": [
+        "isElection",
+        "isLie",
+        "isSmear",
+        "isNickname"
+    ],
+    
+    "1264754622830444500": [
+        "isSmear",
+        "isElection"
+    ],
+    
+    "1326711013593505800": [
+        "isLie",
+        "isElection"
+    ],
+    
+    "1330282078223687700": [
+        "isPandemic",
+        "isSmear",
+        "isNickname"
+    ],
+    
+    "1320585745032269800": [
+        "isSmear",
+        "isElection",
+        "isLie"
+    ],
+    
+    "1326711675165270000": [
+        "isElection"
+    ],
+    
+    "1330288302663069700": [
+        "isElection",
+        "isSmear"
+    ],
+    
+    "1319028569150943200": [
+        "isSmear",
+        "isLie",
+        "isNickname"
+    ],
+    
+    "1319018615140733000": [
+        "isNickname"
+    ],
+    
+    "1318252740431155200": [
+        "isSmear"
+    ],
+    
+    "1318252736538767400": [
+        "isPandemic",
+        "isSmear"
+    ],
+    
+    "1318242345423270000": [
+        "isElection",
+        "isLie",
+        "isSmear"
+    ],
+    
+    "1318242343850373000": [
+        "isElection"
+    ],
+    
+    "1330319750094860300": [
+        "isElection",
+        "isLie"
+    ],
+    
+    "1330319748660416500": [
+        "isElection",
+        "isLie"        
+    ],
+    
+    "1320817236106330000": [
+        "isElection",  
+        "isSmear"
+    ],
+    
+    "1328866797681062000": [
+        "isElection",
+        "isLie"      
+    ],
+    
+    "1328880222171771000":[
+        "isElection",
+        "isLie"            
+    ],
+    
+    "1318891094940287000": [
+        "isElection"
+    ],
+    
+    "1326738785778987000": [
+        "isElection",
+        "isLie"             
+    ],
+    
+    "1318890255974621200": [
+        "isElection",  
+        "isSmear",
+        "isLie"
+    ],
+    
+    "1318888543943561200": [
+        "isElection"
+    ],
+    
+    "1318886369650004000": [
+        "isElection",
+        "isSmear"
+    ],
+    
+    "1318882381202423800": [
+        "isElection",
+        "isSmear"        
+    ],
+    
+    "1210786910240555000": [
+        "isNickname"
+    ]
+    
 }
