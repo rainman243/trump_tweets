@@ -5,18 +5,20 @@
 \usepackage{tikz}
 \usetikzlibrary{bayesnet}
 \usepackage{graphicx}
+\usepackage{fontspec}
 
 \begin{document}
+    \title{Trump's tweets since he started running for President, sorted highest by retweet count.}
     \begin{figure}
-         \vspace{-2cm}
+         \vspace{-3cm}
          \begin{subfigure}{\textwidth}
              \hspace{-3.05cm}
-             \includegraphics{corr_heatmap.eps}
+             \includegraphics{corr_heatmap.pdf}
              \caption{Matrix visualization of Pearson\'s correlation coefficient.}
          \end{subfigure}
-         \hspace{.8cm}
-         \vspace{2cm}
+
          \begin{subfigure}{\textwidth}
+             \hspace{-1cm}
              \input{correlation_graph.tex}
              \caption{Graph visualization of Pearson\'s correlation coefficient.}
          \end{subfigure}

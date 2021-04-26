@@ -4,36 +4,22 @@
     ],
     
     "795954831718498300": [],
-    
-    "474134260149157900": [
-        "isSmear"
-    ],
-    
     "1157345692517634000": [],
     
     "929511061954297900": [
         "isSmear"
     ],
     
-    "373743492151136260": [
-        "isSmear",
-        "isPreemptive"
-    ],
-    
-    "1267129644228247600": [
-        "isLie",
-        "isSmear",
-        "isHitler"
-    ],
-    
     "1325099845045072000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1326926226888544300": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1152307567634391000": [
@@ -49,12 +35,13 @@
     "1346912780700577800": [
         "isElection",
         "isLie",
-        "isHitler"
+        "isDolchstoßlegende"
     ],
     
     "948355557022421000": [
         "isPentagon",
-        "isHitler"
+        "isThreatening",
+        "isBullying"
     ],
     
     "1214739853025394700": [
@@ -68,14 +55,15 @@
     ],
     
     "1296079095479050200": [
-        "isElection",
-        "isLie"
+        "isElection"
     ],
     
     "1323864021167198200": [],
     
     "1213689342272659500": [
-        "isPentagon"
+        "isPentagon",
+        "isThreatening",
+        "isTongueInCheek"
     ],
     
     "1313186529058136000": [],
@@ -86,7 +74,8 @@
         
     "1325194709443080200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "446461592029630460": [
@@ -112,7 +101,8 @@
     
     "1324768077939118000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1329233502139715600": [
@@ -125,7 +115,8 @@
     
     "1324846580147642400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1188909031403901000": [],
@@ -171,7 +162,7 @@
     "1247950299408498700": [],
     
     "1239997820242923500": [
-        "isHitler"
+        "isPandemic"
     ],
     
     "1324032541544927200": [
@@ -186,12 +177,14 @@
     "1325442336957018000": [
         "isElection",
         "isSmear",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1325884977112883200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1312442195509563400": [
@@ -205,7 +198,8 @@
     
     "1331987171700510700": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1313664886648582100": [
@@ -226,7 +220,9 @@
     
     "1021234525626609700": [
         "isAllCaps",
-        "isPentagon"
+        "isPentagon",
+        "isTongueInCheek",
+        "isThreatening"
     ],
     
     "1250852583318737000": [
@@ -240,7 +236,7 @@
     
     "1325896369534607400": [
         "isElection",
-        "isLie"
+        "isFalsePrediction"
     ],
     
     "1268671097010094000": [],
@@ -248,7 +244,9 @@
     "1330288302663069700": [
         "isElection",
         "isLie",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende",
+        "isLügenpresse"
     ],
     
     "755788382618390500": [],
@@ -268,51 +266,57 @@
     
     "1327978710809661400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende",
+        "isFalsePrediction"
     ],
     
     "1346818855298072600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "728297587418247200": [],
     
     "1341405487057821700": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1326304091035881500": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1324130551234728000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1332352538855747600": [
         "isElection",
         "isLie",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1334240039639937000": [],
     
     "1340996686257254400": [
         "isElection",
-        "isLie"
-    ],
-    
-    "375609403376144400": [
-        "isPentagon"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1338145849784873000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1312842736563880000": [],
@@ -335,7 +339,8 @@
     
     "1326679385966047200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1344359312878149600": [],
@@ -353,7 +358,8 @@
     
     "1324007806694023200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1177669563477119000": [],
@@ -364,7 +370,8 @@
     
     "1341885394124607500": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1341565405509394400": [],
@@ -375,7 +382,8 @@
     
     "1340529063799246800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1340529063799246800": [
@@ -390,7 +398,8 @@
     
     "1344400646066331600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1235633381595066400": [],
@@ -412,7 +421,8 @@
     
     "1333405854297632800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1154502673514684400": [
@@ -436,17 +446,21 @@
     
     "1346578706437963800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isNickname",
+        "isDolchstoßlegende"
     ],
     
     "1328883405837258800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1327407964404260900": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1267609190140436500": [],
@@ -459,7 +473,8 @@
     
     "1325895380983275500": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1266760009872007200": [
@@ -469,19 +484,22 @@
     
     "1338871862315667500": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1327319294057848800": [
         "isElection",
         "isLie",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1288933202812457000": [],
     
     "1252932181447630800": [
-        "isPentagon"
+        "isPentagon",
+        "isThreatening"
     ],
     
     "1296092859226042400": [
@@ -489,8 +507,7 @@
     ],
     
     "1313863059019051000": [
-        "isSmear",
-        {"isHitler": ".2"}
+        "isSmear"
     ],
     
     "1178076917788037000": [],
@@ -503,12 +520,14 @@
     
     "1326327582074220500": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1314637928883159000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1332175155104247800": [],
@@ -516,29 +535,35 @@
     
     "1342974370822692900": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1330148622898516000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende",
+        "isFalsePrediction"
     ],    
     
     "1307321159113937000": [],
     
     "1325096422799237000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1325889532840063000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1346659909492998100": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1214197038063243300": [
@@ -552,34 +577,41 @@
     
     "1324059767581671400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1342245390540804000": [
         "isElection",
         "isLie",
         "isNickname",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1325432465415164000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1315632997601771500": [
         "isElection",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1331086969183621000": [
         "isElection",
         "isLie",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1213919480574812200": [
-        "isPentagon"
+        "isPentagon",
+        "isThreatening",
+        "isTongueInCheek"
     ],
     
     "1281616586273468400": [
@@ -589,19 +621,20 @@
     
     "1339597489926590500": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1327828007311073300": [
-        "isSmear",
-        {"isHitler": ".1"}
+        "isSmear"
     ],
     
     "1339770665168228400": [],
     
     "1328152462331699200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1296219101623459800": [
@@ -616,7 +649,10 @@
     
     "1326186126709821400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isPandemic",
+        "isDolchstoßlegende",
+        "isPreemptive"
     ],
     
     "1342835233306124300": [
@@ -631,7 +667,9 @@
     
     "1344367336715858000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende",
+        "isSmear"
     ],
     
     "1275379758021390300": [
@@ -642,7 +680,8 @@
     
     "1332552283553476600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1316501350658707500": [
@@ -651,13 +690,15 @@
     
     "1324108200141082600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1341792832093364200": [
         "isElection",
         "isLie",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1273972301156016000": [],
@@ -668,10 +709,7 @@
     ],
     
     "1328801981222281200": [],
-    
-    "1254769296280031200": [
-        {"isHitler": ".1"}
-    ],
+    "1254769296280031200": [],
     
     "1315769883318124500": [
         "isPandemic",
@@ -681,7 +719,7 @@
     "1332317394165969000": [
         "isElection",
         "isLie",
-        {"isHitler": ".3"}
+        "isDolchstoßlegende"
     ],
     
     "1056885392522260500": [],
@@ -689,28 +727,33 @@
     
     "1332317347722498000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1328483862490574800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1328100945570500600": [
         "isPreemptive",
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1330732289018503200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1336811823232921600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1346822958006886400": [],
@@ -732,7 +775,8 @@
     
     "1327750127679889400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1294235168471953400": [],
@@ -752,14 +796,14 @@
     
     "1324139647111409700": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1269753231355371500": [],
     
     "1346583537256976400": [
-        "isLie",
-        {"isHitler": ".2"}
+        "isLie"
     ],
     
     "1276312029360541700": [
@@ -786,7 +830,8 @@
     
     "1345095714687377400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1276205906338824200": [],
@@ -800,14 +845,16 @@
     "1342830505163706400": [
         "isElection",
         "isLie",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1327715767916392400": [
         "isElection",
         "isLie",
         "isNickname",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1326884956749127700": [],
@@ -819,19 +866,22 @@
     
     "1346822610957561900": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1117095396692635600": [],
     
     "1325563462433509400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1346685023861272600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1045444544068812800": [
@@ -850,7 +900,8 @@
     
     "1332788716818010000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1054874705491120100": [],
@@ -864,7 +915,8 @@
     
     "1342821189077622800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1297132096448864300": [],
@@ -878,7 +930,8 @@
     "1327279929319432200": [
         "isElection",
         "isLie",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1324752659996397600": [
@@ -889,12 +942,14 @@
     
     "1329602736053252000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1327811527123103700": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1009536237881847800": [],
@@ -912,7 +967,8 @@
     "1335971721262796800": [
         "isElection",
         "isLie",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1324612560646262800": [
@@ -933,7 +989,8 @@
     
     "1344054358418346000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1293922936609546200": [],
@@ -945,17 +1002,20 @@
     
     "1340185773220515800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1346698217304584200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1338852676654821400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1326920264203047000": [],
@@ -963,7 +1023,8 @@
     
     "1337745268591259600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1329408856733184000": [
@@ -978,7 +1039,8 @@
         "isElection",
         "isLie",
         "isSmear",
-        "isNickname"
+        "isNickname",
+        "isDolchstoßlegende"
     ],
     
     "1330499656003039200": [],
@@ -992,17 +1054,20 @@
     
     "1327095398712946700": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1345803569438597000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1328382287331856400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1325527391993786400": [
@@ -1016,7 +1081,8 @@
     
     "1324901123996741600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1318251010595303400": [],
@@ -1030,12 +1096,14 @@
     "1327350069947936800": [
         "isElection",
         "isSmear",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1340306154031857700": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1266231100172615700": [
@@ -1053,7 +1121,8 @@
         "isElection",
         "isNickname",
         "isSmear",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "516382177798680600": [
@@ -1064,7 +1133,6 @@
     "1326673766915641300": [],
     
     "1272269338892959700": [
-        {"isHitler": ".1"},
         "isPandemic",
         "isSmear",
         "isNickname"
@@ -1074,19 +1142,22 @@
     
     "1329093126238204000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1109787378242240500": [],
     
     "1327619653020110800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1265427538140188700": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1313903112399261700": [
@@ -1125,17 +1196,20 @@
     
     "1329075487553974300": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1250067500190089200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1327413534901350400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1273688806508675000": [
@@ -1151,7 +1225,8 @@
         "isElection",
         "isLie",
         "isNickname",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1331404288149643300": [
@@ -1160,28 +1235,33 @@
     
     "1346808075626426400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1330319748660416500": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1328093294782509000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1338483200046354400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1340386251866828800": [
         "isElection",
         "isLie",
-        "isOpposite"
+        "isOpposite",
+        "isDolchstoßlegende"
     ],
     
     "1259667289252790300": [
@@ -1192,7 +1272,8 @@
     "1275024974579982300": [
         "isPreemptive",
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1316841775466651600": [
@@ -1202,22 +1283,27 @@
     
     "1337774011376341000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1327717223142731800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1326347841476890600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1342817496924086300": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende",
+        "isSmear"
     ],
     
     "1296645682875506700": [
@@ -1230,7 +1316,8 @@
     
     "1339709639584338000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1241558583193583600": [
@@ -1240,7 +1327,8 @@
     
     "1333245684011643000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1326342742801326000": [
@@ -1255,12 +1343,15 @@
     
     "1326190800070471700": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1314591877765660700": [
         "isElection",
-        "isLie"
+        "isLie", 
+        "isNickname",
+        "isSmear"
     ],
     
     "1314591877765660700": [
@@ -1283,7 +1374,8 @@
     
     "1332778938121203700": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1328055196904251400": [
@@ -1311,12 +1403,14 @@
     "1342826019745640400": [
         "isElection",
         "isLie",
-        "isNickname"
+        "isNickname",
+        "isDolchstoßlegende"
     ],
     
     "1343919651336712200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1346115128719245300": [
@@ -1330,7 +1424,8 @@
     
     "1333243285389914000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1263085979491016700": [
@@ -1343,12 +1438,16 @@
     "1276564734465249300": [],
     
     "1245396884040097800": [
-        "isPentagon"
+        "isPentagon",
+        "isTongueInCheek",
+        "isThreatening"
     ],
     
     "1342832582606598100": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende",
+        "isPentagon"
     ],
     
     "803567993036755000": [],
@@ -1360,7 +1459,8 @@
     
     "1338254785666044000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1269970808329437200": [
@@ -1379,14 +1479,16 @@
     
     "1329478149609042000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1346120645613150200": [
         "isElection",
         "isLie",
         "isSmear",
-        "isNickname"
+        "isNickname",
+        "isDolchstoßlegende"
     ],
     
     "1314021500941369300": [
@@ -1418,7 +1520,8 @@
     
     "1334282156349268000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1278099002345619500": [
@@ -1437,7 +1540,8 @@
     
     "1338851758819389400": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1319092938412937200": [],
@@ -1454,7 +1558,8 @@
     
     "1329871775707107300": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1298671449968959500": [],
@@ -1462,8 +1567,8 @@
     "1288818160389558300": [
         "isElection",
         "isLie",
-        {"isHitler": ".1"},
-        "isPreemptive"
+        "isPreemptive",
+        "isDolchstoßlegende"
     ],
     
     "976765417908777000": [
@@ -1490,12 +1595,14 @@
         "isElection",
         "isLie",
         "isSmear",
-        "isNickname"
+        "isNickname",
+        "isDolchstoßlegende"
     ],
     
     "1337790419875352600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "828447350200926200": [
@@ -1523,7 +1630,8 @@
     
     "1327708998662025200": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1327834542707794000": [
@@ -1536,7 +1644,8 @@
     
     "1337195587771510800": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1314998881126625300": [
@@ -1557,7 +1666,8 @@
     
     "1329459995893764000": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1276633518433538000": [],
@@ -1566,12 +1676,14 @@
         "isElection",
         "isLie",
         "isNickname",
-        "isSmear"
+        "isSmear",
+        "isDolchstoßlegende"
     ],
     
     "1345404682655707100": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1345152408591204400": [],
@@ -1603,7 +1715,8 @@
     
     "1333965375193624600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1331247567041081300": [
@@ -1626,7 +1739,7 @@
     
     "1266380510344949800": [
         "isPentagon",
-        "isBLM"
+        "isBlackLivesMatter"
     ],
     
     "1314252606110412800": [],
@@ -1640,12 +1753,14 @@
         "isPandemic",
         "isRacist",
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1332407714304110600": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1249048063618044000": [],
@@ -1654,7 +1769,8 @@
     
     "1346110956078817300": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1266914470066036700": [
@@ -1663,7 +1779,8 @@
     
     "1346845109736845300": [
         "isElection",
-        "isLie"
+        "isLie",
+        "isDolchstoßlegende"
     ],
     
     "1342554825465196500": [
@@ -1677,16 +1794,71 @@
     
     "1338574268154646500": [
         "isElection",
-        "isLie"
-    ]
+        "isLie",
+        "isDolchstoßlegende"
+    ],
     
+    "1241935285916782600": [
+        "isPandemic"
+    ],
     
+    "1318898380421083100": [
+        "isElection",
+        "isSmear"
+    ],
     
+    "1048745061888880600": [
+        "isLie",
+        "isSmear",
+        "isIKnowYouAreButWhatAmI"
+    ],
     
+    "1326147913542668300": [
+        "isPandemic"
+    ],
     
+    "1251186179548033000": [
+        "isPandemic",
+        "isNickname",
+        "isSmear",
+        "isXenophobic"
+    ],
     
+    "1263282623939477500": [
+        "isSmear",
+        "isNickname",
+        "isXenophobic",
+        "isIKnowYouAreButWhatAmI",
+        "isLie",
+        "isElection"
+    ],
     
-        
+    "1332173996134195200": [
+        "isLie",
+        "isSmear"
+    ],
     
+    "1313584866932527000": [
+        "isSmear",
+        "isFalsePrediction",
+        "isLie",
+        "isElection"
+    ],
     
+    "1213593975732527000": [
+        "isPentagon",
+        "isThreatening",
+        "isTongueInCheek"
+    ],
+    
+    "1325961672343875600": [
+        "isLie",
+        "isSmear"
+    ],
+    
+    "1302601868313538600": [
+        "isPentagon",
+        "isLie",
+        "isSmear"
+    ]   
 }
