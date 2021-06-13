@@ -1,0 +1,8 @@
+\begin{tikzpicture}\node[const] (isHitler) [minimum size=1.5cm] {isHitler};
+\node[const] (isDolchstoßlegende) [right=of isHitler, minimum size=1.5cm] {isDolchstoßlegende};
+\node[const] (isLügenpresse) [left=of isHitler, minimum size=1.5cm] {isLügenpresse};
+\node[const] (isLie) [above=of isHitler, minimum size=1.5cm, xshift=-2cm] {isLie};
+\node[const] (isElection) [below=of isHitler, minimum size=1.5cm] {isElection};
+\node[const] (isFlagged) [above=of isHitler, minimum size=1.5cm, xshift=2cm] {isFlagged};
+\edge [-, color=blue!45.85954785586217!white, line width=0.917190957117243pt] {isLügenpresse} {isHitler}; \edge [-, color=blue!83.86598737820579!white, line width=1.677319747564116pt] {isDolchstoßlegende} {isHitler}; \edge [-, color=blue!65.60806262792738!white, line width=1.312161252558548pt] {isLie} {isHitler}; \edge [-, color=blue!75.09494448131467!white, line width=1.501898889626293pt] {isLie} {isDolchstoßlegende}; \edge [-, color=blue!67.94458653183128!white, line width=1.358891730636625pt] {isElection} {isHitler}; \edge [-, color=blue!82.28129844154482!white, line width=1.645625968830896pt] {isElection} {isDolchstoßlegende}; \edge [-, color=blue!72.15875553426622!white, line width=1.443175110685324pt] {isElection} {isLie}; \edge [-, color=blue!41.179151150670364!white, line width=0.823583023013407pt] {isFlagged} {isHitler}; \edge [-, color=blue!48.25836147150472!white, line width=0.965167229430094pt] {isFlagged} {isDolchstoßlegende}; \edge [-, color=blue!38.90790064832985!white, line width=0.778158012966597pt] {isFlagged} {isLie}; \edge [-, color=blue!45.51222286900394!white, line width=0.910244457380079pt] {isFlagged} {isElection}; 
+\end{tikzpicture}

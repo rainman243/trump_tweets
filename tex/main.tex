@@ -6,22 +6,29 @@
 \usetikzlibrary{bayesnet}
 \usepackage{graphicx}
 \usepackage{fontspec}
+\usepackage{multicol}
 
 \begin{document}
-    \title{Trump's top tweets since he started running for President, by retweets.}
+    \title{Trump's top tweets since he started running for President, by retweet count.}
     \begin{figure}
-         \vspace{-3cm}
-         \begin{subfigure}{\textwidth}
-             \hspace{-3.05cm}
-             \includegraphics{corr_heatmap.pdf}
-             \caption{Matrix visualization of Pearson\'s correlation coefficient. }
-         \end{subfigure}
-
-         \begin{subfigure}{\textwidth}
-             \hspace{-1cm}
-             \input{correlation_graph.tex}
-             \caption{Graph visualization of Pearson\'s correlation coefficient.}
-         \end{subfigure}
+         \hspace{-1cm}
+         \input{correlation_graph.tex}
+         \caption{Graph visualization of Pearson\'s correlation coefficient with sample counts.}
     \end{figure}
-
+           
+    \hspace{-4cm}
+    \vspace{-20cm}
+    \begin{figure}
+        \hspace{-.8cm}
+        \input{hitler_correlation_graph.tex}
+        \caption{Graph visualization of Pearson\'s correlation coefficient for Hitler subgraph. This subset captures most of the top correlations from Trump's top tweets.}
+    \end{figure}
+    
+    \begin{figure}
+         \vspace{-1cm}
+         \hspace{-3.05cm}
+         \includegraphics{corr_heatmap.pdf}
+         \caption{Matrix visualization of Pearson\'s correlation coefficient.}
+    \end{figure}
+    
 \end{document}

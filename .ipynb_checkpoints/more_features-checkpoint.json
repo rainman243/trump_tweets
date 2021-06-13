@@ -7,7 +7,8 @@
     "1157345692517634000": [],
     
     "929511061954297900": [
-        "isSmear"
+        "isSmear",
+        "isBullying"
     ],
     
     "1325099845045072000": [
@@ -41,7 +42,8 @@
     "948355557022421000": [
         "isPentagon",
         "isThreatening",
-        "isBullying"
+        "isBullying",
+        "isWarPowersAct1973"
     ],
     
     "1214739853025394700": [
@@ -63,7 +65,10 @@
     "1213689342272659500": [
         "isPentagon",
         "isThreatening",
-        "isTongueInCheek"
+        "isTongueInCheek",
+        "isPreemptive",
+        "isBullying",
+        "isWarPowersAct1973"
     ],
     
     "1313186529058136000": [],
@@ -222,7 +227,8 @@
         "isAllCaps",
         "isPentagon",
         "isTongueInCheek",
-        "isThreatening"
+        "isThreatening",
+        "isWarPowersAct1973"
     ],
     
     "1250852583318737000": [
@@ -236,7 +242,7 @@
     
     "1325896369534607400": [
         "isElection",
-        "isFalsePrediction"
+        "isFalse"
     ],
     
     "1268671097010094000": [],
@@ -268,7 +274,7 @@
         "isElection",
         "isLie",
         "isDolchstoßlegende",
-        "isFalsePrediction"
+        "isFalse"
     ],
     
     "1346818855298072600": [
@@ -416,7 +422,9 @@
         "isSmear",
         "isNickname",
         "isLie",
-        "isUkraine"
+        "isUkraine",
+        "isPreemptive",
+        "isElection"
     ],
     
     "1333405854297632800": [
@@ -448,6 +456,7 @@
         "isElection",
         "isLie",
         "isNickname",
+        "isSmear",
         "isDolchstoßlegende"
     ],
     
@@ -543,7 +552,7 @@
         "isElection",
         "isLie",
         "isDolchstoßlegende",
-        "isFalsePrediction"
+        "isFalse"
     ],    
     
     "1307321159113937000": [],
@@ -611,7 +620,9 @@
     "1213919480574812200": [
         "isPentagon",
         "isThreatening",
-        "isTongueInCheek"
+        "isTongueInCheek",
+        "isPreemptive",
+        "isWarPowersAct1973"
     ],
     
     "1281616586273468400": [
@@ -1109,7 +1120,9 @@
     "1266231100172615700": [
         "isNickname",
         "isSmear",
-        "isPentagon"
+        "isPentagon",
+        "isThreatening",
+        "isBlackLivesMatter"
     ],
     
     "1151103647637487600": [],
@@ -1260,7 +1273,6 @@
     "1340386251866828800": [
         "isElection",
         "isLie",
-        "isOpposite",
         "isDolchstoßlegende"
     ],
     
@@ -1322,7 +1334,8 @@
     
     "1241558583193583600": [
         "isPandemic",
-        "isXenophobic"
+        "isXenophobic",
+        "isNickname"
     ],
     
     "1333245684011643000": [
@@ -1354,16 +1367,9 @@
         "isSmear"
     ],
     
-    "1314591877765660700": [
-        "isLie",
-        "isNickname",
-        "isSmear"
-    ],
-    
     "1313243541959737300": [
         "isElection",
-        "isSmear",
-        "isNickname"
+        "isLie"
     ],
     
     "1266796670609588200": [
@@ -1403,7 +1409,6 @@
     "1342826019745640400": [
         "isElection",
         "isLie",
-        "isNickname",
         "isDolchstoßlegende"
     ],
     
@@ -1431,7 +1436,8 @@
     "1263085979491016700": [
         "isXenophobic",
         "isSmear",
-        "isPandemic"
+        "isPandemic",
+        "isIKnowYouAreButWhatAmI"
     ],
     
     "1163603361423351800": [],
@@ -1440,7 +1446,8 @@
     "1245396884040097800": [
         "isPentagon",
         "isTongueInCheek",
-        "isThreatening"
+        "isThreatening",
+        "isWarPowersAct1973"
     ],
     
     "1342832582606598100": [
@@ -1840,15 +1847,9 @@
     
     "1313584866932527000": [
         "isSmear",
-        "isFalsePrediction",
+        "isFalse",
         "isLie",
         "isElection"
-    ],
-    
-    "1213593975732527000": [
-        "isPentagon",
-        "isThreatening",
-        "isTongueInCheek"
     ],
     
     "1325961672343875600": [
@@ -1860,5 +1861,361 @@
         "isPentagon",
         "isLie",
         "isSmear"
-    ]   
+    ],
+    
+    "1279906540791779300": [
+        "isPandemic",
+        "isXenophobic",
+        "isLie"
+    ],
+    
+    "1326149041248407600": [],
+    
+    "1296601698891374600": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1345100089505755100": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1337620892139081700": [
+        "isDolchstoßlegende",
+        "isSmear"
+    ],
+    
+    "1345100089505755100": [
+        "isPandemic",
+        "isXenophobic",
+        "isLie"
+    ],
+    
+    "1267885675338219500": [
+        {"isLie": ".5"}
+    ],
+    
+    "1346580318745206800": [
+        "isSmear",
+        "isNickname",
+        "isDolchstoßlegende"
+    ],
+    
+    "1310211120922230800": [
+        "isLie",
+        "isNickname",
+        "isSmear"
+    ],
+    
+    "1314017484262047700": [],
+    "1265427539008381000": [],
+    
+    "1325956184613019600": [
+        "isFalse"
+    ],
+    
+    "1267835873405665300": [
+        "isPentagon",
+        "isPandemic"
+    ],
+    
+    "1339453818996727800": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1330555645213483000": [
+        "isDolchstoßlegende"  
+    ],
+    
+    "1321472358830403600": [
+        "isSmear"
+    ],
+    
+    "1210750161174941700": [
+        "isNickname"
+    ],
+    
+    "1100211495223218200": [
+        "isLie"
+    ],
+    
+    "1323344710023471000": [
+        "isLie",
+        "isSmear"
+    ],
+    
+    "1254172638307586000": [
+        "isPandemic"
+    ],
+    
+    "1316596552757063700": [],
+    
+    "1269617458354282500": [
+        "isNickname",
+        "isSmear"
+    ],
+    
+    "796900183955095600": [
+        "isElection"
+    ],
+    
+    "1339937091707351000": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1346521447649390600": [
+        "isDolchstoßlegende"
+    ],
+    
+    "822502270503972900": [
+        "isElection"
+    ],
+    
+    "1345798202650460200": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1329054683441279000": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1267187902192193500": [
+        "isAntifa",
+        "isNickname",
+        "isBullying"
+    ],
+    
+    "1150874781744607200": [],
+    
+    "994586105822564400": [
+        "isPentagon"
+    ],
+    
+    "1333464453778706400": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1338715842931024000": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1301145978096025600": [
+        "isNickname",
+        "isSmear",
+        "isPandemic"
+    ],
+    
+    "1334573529107460000": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1277219673315119000": [
+        "isNickname",
+        "isSmear"
+    ],
+    
+    "921716470140325900": [],
+    
+    "1285299379746812000": [
+        "isPandemic",
+        "isXenophobic"
+    ],
+    
+    "1301587555301896200": [
+        "isNickname",
+        "isSmear"
+    ],
+    
+    "1146514575048790000": [
+        "isXenophobic"
+    ],
+    
+    "1337067073051238400": [],
+    
+    "1345111621430091800": [
+        "isPandemic",
+        "isXenophobic"
+    ],
+    
+    "1345111621430091800": [
+        "isPandemic",
+        "isXenophobic"
+    ],
+    
+    "1320689314506965000": [
+        "isSmear"
+    ],
+    
+    "1269634983687315500": [
+        "isNickname",
+        "isPentagon",
+        "isSmear"
+    ],
+    
+    "1342974377218994200": [
+        "isDolchstoßlegende"        
+    ],
+    
+    "1317652894678610000": [
+        "isSmear"
+    ],
+    
+    "829836231802515500": [
+        "isXenophobic",
+        "isRacist"
+    ],
+    
+    "1313063990797504500": [
+        "isSmear"
+    ],
+    
+    "1325961114514038800": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1346112444108836900": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1296944031264649200": [],
+    
+    "1301249968091455500": [
+        "isLie",
+        "isNickname",
+        "isSmear"
+    ],
+    
+    "1339225465584840700": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1227040292060180500": [],
+    
+    "1335268230206722000": [
+        "isDolchstoßlegende",
+        "isRINO"
+    ],
+    
+    "1332473183677673500": [
+        "isPandemic"
+    ],
+    
+    "1282669015794618400": [],
+    
+    "1225179058000089000": [
+        "isFirstImpeachment"
+    ],
+    
+    "1331013907859845000": [
+        "isElection",
+        "isDolchstoßlegende"
+    ],
+    
+    "1163478770587721700": [
+        "isDolchstoßlegende",
+        "isPreemptive"
+    ],
+    
+    "1345731043861659600": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1309169908358545400": [
+        "isIKnowYouAreButWhatAmI",
+        "isLie",
+        "isSmear"
+    ],
+    
+    "1328448530504163300": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1327958640309973000": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1314711027326562300": [
+        "isLie"
+    ],
+
+    "898243270169563100": [],
+    "1326343694912467000": [],
+    "1265706645134274600": [],
+    
+    "1120093671356022800": [
+        "isLie",
+        "isOpposite",
+        "isFirstImpeachment"
+    ],
+    
+    "1330259856662655000": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1345720107255926800": [
+        "isPandemic",
+        "isXenophobic",
+        "isFalse"
+    ],
+    
+    "1337755490563010600": [
+        "isSmear",
+        "isLie"
+    ],
+    
+    "1276184906159272000": [
+        "isPandemic",
+        "isXenophobic",
+        "isLie"
+    ],
+    
+    "1268166288993632300": [
+        "isSmear"
+    ],
+    
+    "1268564689069527000": [],
+    
+    "1332317320191074300": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1285520982648729600": [
+        "isBlackLivesMatter",
+        "isCelebrity",
+        "isRacist"
+    ],
+    
+    "1283192212986232800": [
+        "isLie",
+        "isSmear"
+    ],
+    
+    "1332155514386600000": [
+        "isDolchstoßlegende"
+    ],
+    
+    "1254174221481246700": [
+        "isLie",
+        "isPandemic",
+        "isSmear",
+        "isNickname"
+    ],
+    
+    "1313183801732890600": [],
+    
+    "1272510078348857300": [
+        "isSmear",
+        "isLie"
+    ],
+    
+    "1337220913528533000": [
+        "isDolchstoßlegende",
+        "isSmear"
+    ],
+    
+    "1329069814195871700": [
+        "isDolchstoßlegende"
+    ]
+    
+    
+    
 }
