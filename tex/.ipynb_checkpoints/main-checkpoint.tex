@@ -9,25 +9,19 @@
 \usepackage{multicol}
 
 \begin{document}
-    \title{Trump's top tweets since he started running for President, by retweet count.}
+    \title{Trump's top 496 tweets since he started running for President, by Retweet}
+    \author{Matthew Woods (mattwoods243@outlook.com)}
+    \maketitle
     \begin{figure}
-         \hspace{-1cm}
+         \hspace{-1.5cm}
          \input{correlation_graph.tex}
          \caption{Graph visualization of Pearson\'s correlation coefficient with sample counts.}
     \end{figure}
-           
-    \hspace{-4cm}
-    \vspace{-20cm}
+ 
     \begin{figure}
-        \hspace{-.8cm}
-        \input{hitler_correlation_graph.tex}
-        \caption{Graph visualization of Pearson\'s correlation coefficient for Hitler subgraph. This subset captures most of the top correlations from Trump's top tweets.}
-    \end{figure}
-    
-    \begin{figure}
-         \vspace{-1cm}
-         \hspace{-3.05cm}
-         \includegraphics{corr_heatmap.pdf}
+         \vspace{-4cm}
+         \hspace{-3cm}
+         \includegraphics[scale=.8]{corr_heatmap.pdf}
          \caption{Matrix visualization of Pearson\'s correlation coefficient.}
     \end{figure}
     
