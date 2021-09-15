@@ -14,13 +14,15 @@
     "1325099845045072000": [
         "isElection",
         "isLie",
-        "isDolchstoßlegende"
+        "isDolchstoßlegende",
+        "Reichstagsgebäude"
     ],
     
     "1326926226888544300": [
         "isElection",
         "isLie",
-        "isDolchstoßlegende"
+        "isDolchstoßlegende",
+        "Reichstagsgebäude"
     ],
     
     "1152307567634391000": [
@@ -68,7 +70,8 @@
         "isTongueInCheek",
         "isPreemptive",
         "isBullying",
-        "isWarPowersAct1973"
+        "isWarPowersAct1973",
+        "isIran"
     ],
     
     "1313186529058136000": [],
@@ -107,7 +110,8 @@
     "1324768077939118000": [
         "isElection",
         "isLie",
-        "isDolchstoßlegende"
+        "isDolchstoßlegende",
+        "Reichstagsgebäude"
     ],
     
     "1329233502139715600": [
@@ -121,7 +125,8 @@
     "1324846580147642400": [
         "isElection",
         "isLie",
-        "isDolchstoßlegende"
+        "isDolchstoßlegende",
+        "Reichstagsgebäude"
     ],
     
     "1188909031403901000": [],
@@ -183,7 +188,8 @@
         "isElection",
         "isSmear",
         "isLie",
-        "isDolchstoßlegende"
+        "isDolchstoßlegende",
+        "Reichstagsgebäude"
     ],
     
     "1325884977112883200": [
