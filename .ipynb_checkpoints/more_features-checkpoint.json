@@ -15,14 +15,14 @@
         "isElection",
         "isLie",
         "isDolchstoßlegende",
-        "Reichstagsgebäude"
+        "isReichstagsgebäude"
     ],
     
     "1326926226888544300": [
         "isElection",
         "isLie",
         "isDolchstoßlegende",
-        "Reichstagsgebäude"
+        "isReichstagsgebäude"
     ],
     
     "1152307567634391000": [
@@ -111,7 +111,7 @@
         "isElection",
         "isLie",
         "isDolchstoßlegende",
-        "Reichstagsgebäude"
+        "isReichstagsgebäude"
     ],
     
     "1329233502139715600": [
@@ -126,7 +126,7 @@
         "isElection",
         "isLie",
         "isDolchstoßlegende",
-        "Reichstagsgebäude"
+        "isReichstagsgebäude"
     ],
     
     "1188909031403901000": [],
@@ -189,7 +189,7 @@
         "isSmear",
         "isLie",
         "isDolchstoßlegende",
-        "Reichstagsgebäude"
+        "isReichstagsgebäude"
     ],
     
     "1325884977112883200": [
