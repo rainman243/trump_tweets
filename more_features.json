@@ -3,33 +3,57 @@
         "isPandemic"
     ],
     
-    "795954831718498300": [],
-    "1157345692517634000": [],
+    "881503147168071700": [
+        "isLügenpresse",
+        "isSmear"
+    ],
+    
+    "795954831718498300": [
+        "isMAGA"
+    ],
+    
+    "1157345692517634000": [
+        "isCelebrity"
+    ],
     
     "929511061954297900": [
         "isSmear",
-        "isBullying"
+        "isBullying",
+        "isNorthKorea",
+        "isLie"
+    ],
+    
+    "1267129644228247600": [
+        "isIronic",
+        "isAntifa",
+        "isHitler"
     ],
     
     "1325099845045072000": [
         "isElection",
         "isLie",
-        "isDolchstoßlegende",
-        "isReichstagsgebäude"
+        "isDolchstoßlegende"    
     ],
     
     "1326926226888544300": [
         "isElection",
         "isLie",
-        "isDolchstoßlegende",
-        "isReichstagsgebäude"
+        "isDolchstoßlegende"
     ],
     
     "1152307567634391000": [
         "isCelebrity"
     ],
     
+    "1199718185865535500": [],
+    
+    "1341537886315950000": [],
+    
     "796315640307060700": [],
+    
+    "1323534663453913000": [
+        "isElection"
+    ],
     
     "1325195021339988000": [
         "isElection"
@@ -38,18 +62,32 @@
     "1346912780700577800": [
         "isElection",
         "isLie",
-        "isDolchstoßlegende"
+        "isOpposite",
+        "isIKnowYouAreButWhatAmI",
+        "isReichstagsgebäude"
     ],
+    
+    "1347334804052844500": [],
+
+    "1212924762827047000": [],
     
     "948355557022421000": [
         "isPentagon",
         "isThreatening",
         "isBullying",
-        "isWarPowersAct1973"
+        "isWarPowersAct1973",
+        "isNorthKorea"
     ],
     
+    "1312525833505058800": [],
+    
+    "1312525833505058800": [
+        "isChina"
+    ],
+
     "1214739853025394700": [
-        "isPentagon"
+        "isPentagon",
+        "isIran"
     ],
     
     "1312233807991496700": [],
@@ -67,14 +105,24 @@
     "1213689342272659500": [
         "isPentagon",
         "isThreatening",
-        "isTongueInCheek",
-        "isPreemptive",
+        "isInsinuating",
         "isBullying",
         "isWarPowersAct1973",
         "isIran"
     ],
     
-    "1313186529058136000": [],
+    "1313186529058136000": [
+        "isPandemic"
+    ],
+    
+    "741007091947556900": [],
+    
+    "1312158400352972800": [],
+    
+    "1319466667676749800": [],
+    
+    "1325194709443080200": [
+        
     
     "741007091947556900": [
         "isSmear"
