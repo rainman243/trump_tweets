@@ -8,7 +8,7 @@ with open("more_features.json") as f:
     dict_features = json.load(f)
 p(dict_features)
 
-class TextEditDemo(QWidget):
+class TweetDataEntryTool(QWidget):
         def __init__(self,parent=None):
                 super().__init__(parent)
 
@@ -36,6 +36,6 @@ class TextEditDemo(QWidget):
 
 if __name__ == '__main__':
         app = QApplication(sys.argv)
-        win = TextEditDemo()
+        win = TweetDataEntryTool()
         win.show()
         sys.exit(app.exec_())
