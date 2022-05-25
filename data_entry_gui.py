@@ -103,6 +103,18 @@ class TweetDataEntryTool(QWidget):
                 
         def btnPressExit_Clicked(self):
                 self.textEdit.setHtml("!")
+                
+        def changeId(self):
+            self.tweet_id
+        
+        def changeTweetNum(self):
+            self.tweet_num
+        
+        def saveFeature(self):
+            pass
+
+        def saveUrlRef(self):
+            pass
 
 if __name__ == '__main__':
         app = QApplication(sys.argv)
