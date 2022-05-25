@@ -95,26 +95,32 @@ class TweetDataEntryTool(QWidget):
                         
                 self.setLayout(layout_main)
 
+        # Advance to next tweet by decreasing RT.
         def btnPressFwd_Clicked(self):
+                self.this_tweet_num++
                 self.textEdit.setPlainText("Hello PyQt5!\nfrom pythonpyqt.com")
 
+        # Go back to previous tweet.
         def btnPressBack_Clicked(self):
                 self.textEdit.setHtml("<font color='red' size='6'><red>Hello PyQt5!\nHello</font>")
-                
+        
+        # Save and exit.
         def btnPressExit_Clicked(self):
                 self.textEdit.setHtml("!")
-                
-        def changeId(self):
+        
+        # Select tweet by tweet ID.
+        def txtTweetId_Change(self):
             self.tweet_id
         
-        def changeTweetNum(self):
+        # Select tweet by RT order
+        def txtTweetNum_Change(self):
             self.tweet_num
         
-        def saveFeature(self):
-            pass
+        # Save the file once a change is made to the feature or reference URL.
+        def saveAll(self):
+            with open("more_features.json", 'rw') as f:
+                json.dump(self.dict_features)
 
-        def saveUrlRef(self):
-            pass
 
 if __name__ == '__main__':
         app = QApplication(sys.argv)
