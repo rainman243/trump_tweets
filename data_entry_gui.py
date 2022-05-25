@@ -1,4 +1,4 @@
-# Data Entry GUI for more_feature.json
+# Data Entry GUI for more_features.json
 
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QComboBox
 from PyQt5.QtGui import QFont
