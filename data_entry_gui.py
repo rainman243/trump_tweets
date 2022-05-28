@@ -36,12 +36,9 @@ class TweetDataEntryTool(QWidget):
                 self.btnPressFwd.setFont(this_font)
                 self.btnPressBack = QPushButton("Back")
                 self.btnPressBack.setFont(this_font)
-                self.btnPressExit = QPushButton("Exit")
-                self.btnPressExit.setFont(this_font)
 
                 self.btnPressFwd.clicked.connect(self.btnPressFwd_Clicked)
                 self.btnPressBack.clicked.connect(self.btnPressBack_Clicked)
-                self.btnPressExit.clicked.connect(self.btnPressExit_Clicked)
                 
                 # Add layouts
                 layout_main = QHBoxLayout()
@@ -50,10 +47,9 @@ class TweetDataEntryTool(QWidget):
                 layout_main.addLayout(layout_left)
                 layout_main.addLayout(layout_right)
                 
-                # Add elements
+                # Add forward/back elements
                 layout_right.addWidget(self.btnPressFwd)
                 layout_right.addWidget(self.btnPressBack)
-                layout_right.addWidget(self.btnPressExit)
                 
                 # Select current tweet
                 self.this_tweet = QLabel()
@@ -74,6 +70,7 @@ class TweetDataEntryTool(QWidget):
                 self.tweet_num_enter = QTextEdit()
                 self.tweet_num_enter.setText("0")
                 layout_right.addWidget(self.tweet_num_enter)
+                self.tweet_num_enter.textChanged.connect(self.txtTweetNum_Change)
                 
                 # Add tweet ID
                 self.tweet_id = QLabel()
@@ -83,7 +80,8 @@ class TweetDataEntryTool(QWidget):
                 self.enter_id = QTextEdit()
                 self.enter_id.setText(self.this_id)
                 layout_right.addWidget(self.enter_id)
-        
+                self.enter_id.textChanged.connect(self.txtTweetId_Change)
+
         # Load features into cells
         def polulate_features(self):       
                 # Add feature entry windows
@@ -96,19 +94,38 @@ class TweetDataEntryTool(QWidget):
                         exec("self.textEdit{i}.setText(self.dict_features[self.this_key][{i}])".format(i=i))
                         
                 self.setLayout(layout_main)
+      
+        # Set Tweet num
+        def set_tweet_num(self, tweet_num):
+            split_id_tweet = re.split(":", self.tweets[tweet_num], maxsplit=1)
+            self.this_id = split_id_tweet[0]
+            self.enter_id.setText(self.this_id)
+            self.this_tweet.setText(split_id_tweet[1])
+        
+        # Set Tweet ID
+        def set_tweet_id(self, tweet_id):
+            
+            # Cycle through tweets to find corresponding ID
+            for i in range(len(self.tweets)):
+                split_id_tweet = re.split(":", self.tweets[i], maxsplit=1)
+                if split_id_tweet[0] == tweet_id:
+                    self.this_tweet.setText(split_id_tweet[1])
+                    self.tweet_num_enter.setText(str(i))
 
+            self.this_id = tweet_id
+            
+            
         # Advance to next tweet by decreasing RT
         def btnPressFwd_Clicked(self):
-                self.this_tweet_num++
-                self.textEdit.setPlainText("Hello PyQt5!\nfrom pythonpyqt.com")
+                tweet_num = int(self.tweet_num_enter) + 1
+                self.tweet_num_enter.setText(str(tweet_num))
+                self.set_tweet_num(tweet_num)
 
         # Go back to previous tweet
         def btnPressBack_Clicked(self):
-                self.textEdit.setHtml("<font color='red' size='6'><red>Hello PyQt5!\nHello</font>")
-        
-        # Save and exit
-        def btnPressExit_Clicked(self):
-                self.textEdit.setHtml("!")
+                tweet_num = int(self.tweet_num_enter) - 1
+                self.tweet_num_enter.setText(str(tweet_num))
+                self.set_tweet_num(tweet_num)
         
         # Select tweet by tweet ID
         def txtTweetId_Change(self):
