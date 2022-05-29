@@ -18,6 +18,7 @@ class TweetDataEntryTool(QWidget):
                 # Load labels
                 with open("more_features.json") as f:
                     self.dict_features = json.load(f)
+                self.this_tweet_num = self.dict_features["0"]
                 
                 # Load feature whitelist
                 with open("feature_whitelist.json") as f:
@@ -31,12 +32,11 @@ class TweetDataEntryTool(QWidget):
                 self.setWindowTitle("Trump Tweet Data Entry Tool")
                 self.resize(1008, 756)
                 
-                # Add buttons
+                # Create forward/back buttons
                 self.btnPressFwd = QPushButton("Forward")
                 self.btnPressFwd.setFont(this_font)
                 self.btnPressBack = QPushButton("Back")
                 self.btnPressBack.setFont(this_font)
-
                 self.btnPressFwd.clicked.connect(self.btnPressFwd_Clicked)
                 self.btnPressBack.clicked.connect(self.btnPressBack_Clicked)
                 
@@ -47,14 +47,14 @@ class TweetDataEntryTool(QWidget):
                 layout_main.addLayout(layout_left)
                 layout_main.addLayout(layout_right)
                 
-                # Add forward/back elements
+                # Add forward/back buttons
                 layout_right.addWidget(self.btnPressFwd)
                 layout_right.addWidget(self.btnPressBack)
                 
                 # Select current tweet
                 self.this_tweet = QLabel()
                 self.this_tweet.setFixedSize(756, 250) 
-                split_id_tweet = re.split(":", self.tweets["0"], maxsplit=1)
+                split_id_tweet = re.split(":", self.tweets[self.this_tweet_num], maxsplit=1)
                 self.this_id = split_id_tweet[0]
                 self.this_tweet.setText(split_id_tweet[1])
                 self.this_tweet.setFont(this_font)
@@ -114,26 +114,27 @@ class TweetDataEntryTool(QWidget):
 
             self.this_id = tweet_id
             
-            
         # Advance to next tweet by decreasing RT
         def btnPressFwd_Clicked(self):
-                tweet_num = int(self.tweet_num_enter) + 1
-                self.tweet_num_enter.setText(str(tweet_num))
-                self.set_tweet_num(tweet_num)
+                self.this_tweet_num = int(self.tweet_num_enter) + 1
+                self.tweet_num_enter.setText(str(self.this_tweet_num))
+                self.set_tweet_num(self.this_tweet_num)
 
         # Go back to previous tweet
         def btnPressBack_Clicked(self):
-                tweet_num = int(self.tweet_num_enter) - 1
-                self.tweet_num_enter.setText(str(tweet_num))
-                self.set_tweet_num(tweet_num)
+                self.this_tweet_num = int(self.tweet_num_enter) - 1
+                self.tweet_num_enter.setText(str(self.this_tweet_num))
+                self.set_tweet_num(self.this_tweet_num)
         
         # Select tweet by tweet ID
         def txtTweetId_Change(self):
-            self.tweet_id
+            self.this_id = self.enter_id.getText()
+            self.set_tweet_id(self.this_tweet_id)
         
         # Select tweet by RT order
         def txtTweetNum_Change(self):
-            self.tweet_num
+            self.this_tweet_num = int(self.enter_id.getText())
+            self.set_tweet_num(self.this_tweet_num)
         
         # Save the file once a change is made to the feature or reference URL
         def saveAll(self):

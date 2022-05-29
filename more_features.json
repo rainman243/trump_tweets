@@ -4,9 +4,7 @@
 {
     "0": 0, // Last Tweet position
     
-    "1311892190680014800": [
-        ["isPandemic"], ["https://www.cdc.gov/coronavirus/2019-ncov/index.html"]
-    ]
-    
-    
+    "1311892190680014800": {"isPandemic": ["https://www.cdc.gov/coronavirus/2019-ncov/index.html"], },          
+    "881503147168071700": {"isLügenpresse": [], "isSmear": [], }, 
+    "795954831718498300": {"isMAGA": [], }, 
 }
