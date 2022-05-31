@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QTextEdit, QPushButto
 from PyQt5.QtGui import QFont
 import json
 from bs4 import BeautifulSoup
+import pandas as pd
+import numpy as np
 import sys
 import re
 from pprint import pprint as p
@@ -28,12 +30,9 @@ class TweetDataEntryTool(QWidget):
                     self.feature_whitelist = list(json.load(f))
                 
                 # Load tweets
-                with open("high_rt_tweets.json") as f:
-                    self.tweets = json.load(f)
-                
-                # Setup reverse lookup for tweets
-                split_id_tweet = [re.split(":", self.tweets[str(i)], maxsplit=2) for i in range(len(self.tweets))]
-                self.tweet_id_lookup = {split_id_tweet[i][0]: str(i) for i in range(len(self.tweets))}
+                with open('tweets_01-08-2021.json', encoding='utf-8') as f:
+                    self.tweet_df = pd.read_json(f)
+                self.tweet_df.sort_values(by=['retweets'], ascending=False, inplace=True, ignore_index=True)
                 
                 # Set window
                 self.setWindowTitle("Trump Tweet Data Entry Tool")
@@ -61,9 +60,8 @@ class TweetDataEntryTool(QWidget):
                 # Select current tweet
                 self.this_tweet = QLabel()
                 self.this_tweet.setFixedSize(756, 250) 
-                split_id_tweet = re.split(":", self.tweets[str(self.this_tweet_num)], maxsplit=1)
-                self.this_id = split_id_tweet[0]
-                self.this_tweet.setText(split_id_tweet[1])
+                self.this_id = str(self.tweet_df.loc[[self.this_tweet_num], ["id"]].values[0, 0])
+                self.this_tweet.setText(self.tweet_df.loc[[self.this_tweet_num], ["text"]].values[0, 0])
                 self.this_tweet.setFont(self.this_font)
                 self.this_tweet.setWordWrap(True)
                 self.layout_left.addWidget(self.this_tweet)
@@ -121,23 +119,22 @@ class TweetDataEntryTool(QWidget):
                     set_text = ""
                     exec("self.textEdit{i}.setPlainText(set_text)".format(i=i))
                     
-            split_id_tweet = re.split(":", self.tweets[self.tweet_id_lookup[self.this_id]], maxsplit=1)
-            self.this_tweet.setText(split_id_tweet[1])
+            self.this_tweet.setText(str(self.tweet_df.loc[[self.this_tweet_num], ["text"]].values[0, 0]))
             self.enter_id.setText(self.this_id)
-            self.tweet_num_enter.setText(self.tweet_id_lookup[self.this_id])
+            self.tweet_num_enter.setText(str(self.this_tweet_num))
 
             
         # Set Tweet num
         def set_tweet_num(self, tweet_num):
             self.this_tweet_num = tweet_num
-            self.this_id = re.split(":", self.tweets[str(self.this_tweet_num)], maxsplit=1)[0]
+            self.this_id = str(self.tweet_df.loc[[self.this_tweet_num], ["id"]].values[0, 0])
             self.populate_features()
 
             
         # Set Tweet ID
         def set_tweet_id(self, tweet_id):
             self.this_id = tweet_id.replace("\n", "")
-            self.this_tweet_num = int(self.tweet_id_lookup[self.this_id])
+            self.this_tweet_num = self.tweet_df["id"].get_loc(self.this_tweet_id)
             self.populate_features()
         
         # Advance to next tweet by decreasing RT
