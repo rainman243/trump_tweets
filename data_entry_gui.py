@@ -141,7 +141,6 @@ class TweetDataEntryTool(QWidget):
             with open("more_features.json", 'rw') as f:
                 json.dump(self.dict_features)
 
-
 if __name__ == '__main__':
         app = QApplication(sys.argv)
         win = TweetDataEntryTool()
