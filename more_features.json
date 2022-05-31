@@ -1,10 +1,8 @@
-// more_features.json: mattwoods243 at outlook.com
-// format: { "tweet_id_1": [ [feature_1, feature_2, ...], [urlref_1, url_ref_2, ... ] ], "tweet_id_2": ... }
-
 {
-    "0": 0, // Last Tweet position
+    "last_position": 0,
     
-    "1311892190680014800": {"isPandemic": ["https://www.cdc.gov/coronavirus/2019-ncov/index.html"], },          
-    "881503147168071700": {"isLügenpresse": [], "isSmear": [], }, 
-    "795954831718498300": {"isMAGA": [], }, 
+    "1311892190680014800": {"isPandemic": ["https://www.cdc.gov/coronavirus/2019-ncov/index.html"]},          
+    "881503147168071700": {"isLügenpresse": [], "isSmear": []}, 
+    "795954831718498300": {"isMAGA": []}
+    
 }

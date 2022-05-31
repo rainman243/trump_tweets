@@ -13,12 +13,13 @@ class TweetDataEntryTool(QWidget):
         def __init__(self,parent=None):
                 super().__init__(parent)
                 
-                this_font = QFont('cm', 16)
+                self.this_font = QFont('cm', 16)
                 
                 # Load labels
                 with open("more_features.json") as f:
                     self.dict_features = json.load(f)
-                self.this_tweet_num = self.dict_features["0"]
+                self.this_tweet_num = self.dict_features.pop("last_position")
+                print(self.dict_features)
                 
                 # Load feature whitelist
                 with open("feature_whitelist.json") as f:
@@ -34,66 +35,80 @@ class TweetDataEntryTool(QWidget):
                 
                 # Create forward/back buttons
                 self.btnPressFwd = QPushButton("Forward")
-                self.btnPressFwd.setFont(this_font)
+                self.btnPressFwd.setFont(self.this_font)
                 self.btnPressBack = QPushButton("Back")
-                self.btnPressBack.setFont(this_font)
+                self.btnPressBack.setFont(self.this_font)
                 self.btnPressFwd.clicked.connect(self.btnPressFwd_Clicked)
                 self.btnPressBack.clicked.connect(self.btnPressBack_Clicked)
                 
                 # Add layouts
-                layout_main = QHBoxLayout()
-                layout_left = QVBoxLayout()
-                layout_right = QVBoxLayout()
-                layout_main.addLayout(layout_left)
-                layout_main.addLayout(layout_right)
+                self.layout_main = QHBoxLayout()
+                self.layout_left = QVBoxLayout()
+                self.layout_right = QVBoxLayout()
+                self.layout_main.addLayout(self.layout_left)
+                self.layout_main.addLayout(self.layout_right)
                 
                 # Add forward/back buttons
-                layout_right.addWidget(self.btnPressFwd)
-                layout_right.addWidget(self.btnPressBack)
+                self.layout_right.addWidget(self.btnPressFwd)
+                self.layout_right.addWidget(self.btnPressBack)
                 
                 # Select current tweet
                 self.this_tweet = QLabel()
                 self.this_tweet.setFixedSize(756, 250) 
-                split_id_tweet = re.split(":", self.tweets[self.this_tweet_num], maxsplit=1)
+                split_id_tweet = re.split(":", self.tweets[str(self.this_tweet_num)], maxsplit=1)
                 self.this_id = split_id_tweet[0]
                 self.this_tweet.setText(split_id_tweet[1])
-                self.this_tweet.setFont(this_font)
+                self.this_tweet.setFont(self.this_font)
                 self.this_tweet.setWordWrap(True)
-                layout_left.addWidget(self.this_tweet)
-                self.this_key = list(self.dict_features.keys())[0]
+                self.layout_left.addWidget(self.this_tweet)
                 
-                # Add tweet number from top RT tweets (0 = highest RTs)
+                # Add whitelist features 
+                self.whitelist_features_label = QTextEdit()
+                self.whitelist_features_label.setText("Whitelist Features: " + ", ".join(self.feature_whitelist))
+                self.whitelist_features_label.setFont(self.this_font)
+                self.whitelist_features_label.setFixedSize(500, 700)
+                self.layout_right.addWidget(self.whitelist_features_label)
+                
+                #tAdd tweet number from top RT tweets (0 = highest RTs)
                 self.tweet_num = QLabel()
-                self.tweet_num.setText("Tweet number from top:")
-                self.tweet_num.setFont(this_font)
-                layout_right.addWidget(self.tweet_num)
+                self.tweet_num.setText("\nTweet Number From Top By RT:")
+                self.tweet_num.setFont(self.this_font)
+                self.layout_right.addWidget(self.tweet_num)
                 self.tweet_num_enter = QTextEdit()
-                self.tweet_num_enter.setText("0")
-                layout_right.addWidget(self.tweet_num_enter)
+                self.tweet_num_enter.setText(str(self.this_tweet_num))
+                self.layout_right.addWidget(self.tweet_num_enter)
                 self.tweet_num_enter.textChanged.connect(self.txtTweetNum_Change)
                 
                 # Add tweet ID
                 self.tweet_id = QLabel()
                 self.tweet_id.setText("Tweet ID:")
-                self.tweet_id.setFont(this_font)
-                layout_right.addWidget(self.tweet_id)
+                self.tweet_id.setFont(self.this_font)
+                self.layout_right.addWidget(self.tweet_id)
                 self.enter_id = QTextEdit()
                 self.enter_id.setText(self.this_id)
-                layout_right.addWidget(self.enter_id)
+                self.layout_right.addWidget(self.enter_id)
                 self.enter_id.textChanged.connect(self.txtTweetId_Change)
 
-        # Load features into cells
-        def polulate_features(self):       
-                # Add feature entry windows
+                
+                # Load features into cells
+                self.dict_keys = list(self.dict_features.keys())
+                self.this_key = self.dict_keys[self.this_tweet_num]
+                features_and_references = self.dict_features[self.this_key]
+                list_keys = list(features_and_references.keys())
+                
                 for i in range(9):
                     exec("self.textEdit{i} = QTextEdit()".format(i=i))
-                    exec("layout_left.addWidget(self.textEdit{i})".format(i=i))
+                    exec("self.layout_left.addWidget(self.textEdit{i})".format(i=i))
                     exec("self.textEdit{i}.resize(100, 250)".format(i=i))
                     
-                    if i < len(self.dict_features[self.this_key]):
-                        exec("self.textEdit{i}.setText(self.dict_features[self.this_key][{i}])".format(i=i))
+                    if i < len(features_and_references):
+                        this_reference_list = features_and_references[list_keys[i]]
+                        reference_list_str = ", ".join(this_reference_list)
+                        set_text = "{feature}\n".format(feature=list_keys[i])
+                        set_text += "{reference_list}".format(reference_list=reference_list_str)
+                        exec("self.textEdit{i}.setPlainText(set_text)".format(i=i))
                         
-                self.setLayout(layout_main)
+                self.setLayout(self.layout_main)
       
         # Set Tweet num
         def set_tweet_num(self, tweet_num):
@@ -108,7 +123,7 @@ class TweetDataEntryTool(QWidget):
             # Cycle through tweets to find corresponding ID
             for i in range(len(self.tweets)):
                 split_id_tweet = re.split(":", self.tweets[i], maxsplit=1)
-                if split_id_tweet[0] == tweet_id:
+                if int(split_id_tweet[0]) == tweet_id:
                     self.this_tweet.setText(split_id_tweet[1])
                     self.tweet_num_enter.setText(str(i))
 
