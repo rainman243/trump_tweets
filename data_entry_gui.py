@@ -43,13 +43,16 @@ class TweetDataEntryTool(QWidget):
                 self.setWindowTitle("Trump Tweet Data Entry Tool")
                 self.resize(1008, 756)
                 
-                # Create forward/back buttons
+                # Create forward/back/save buttons
                 self.btnPressFwd = QPushButton("Forward")
                 self.btnPressFwd.setFont(self.this_font)
                 self.btnPressBack = QPushButton("Back")
                 self.btnPressBack.setFont(self.this_font)
+                self.btnPressSave = QPushButton("Save")
+                self.btnPressSave.setFont(self.this_font)
                 self.btnPressFwd.clicked.connect(self.btnPressFwd_Clicked)
                 self.btnPressBack.clicked.connect(self.btnPressBack_Clicked)
+                self.btnPressBack.clicked.connect(self.btnPressSave_Clicked)
                 
                 # Add layouts
                 self.layout_main = QHBoxLayout()
@@ -150,7 +153,12 @@ class TweetDataEntryTool(QWidget):
         # Go back to previous tweet
         def btnPressBack_Clicked(self):
                 self.set_tweet_num(int(self.tweet_num_enter.toPlainText()) - 1)   
-                
+        
+        # Save current state
+        def btnPressSave_Clicked(self):
+            with open("more_features.json", 'w') as f:
+                json.dump(self.dict_features, f)
+            
         # Select tweet by tweet ID
         def txtTweetId_Change(self):
             if len(inspect.stack()) > 3:
@@ -178,8 +186,6 @@ class TweetDataEntryTool(QWidget):
                     else:
                         self.dict_features[self.this_id] = {self.this_list[0]: self.this_list[1:-1]}                    
             
-            with open("more_features.json", 'w') as f:
-                json.dump(self.dict_features, f)
 
 if __name__ == '__main__':
         app = QApplication(sys.argv)
