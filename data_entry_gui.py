@@ -23,7 +23,7 @@ class TweetDataEntryTool(QWidget):
                 # Load labels
                 with open("more_features.json") as f:
                     self.dict_features = json.load(f)
-                self.this_tweet_num = self.dict_features.pop("last_position")
+                self.this_tweet_num = int(self.dict_features["last_position"])
                 
                 # Load feature whitelist
                 with open("feature_whitelist.json") as f:
@@ -34,6 +34,11 @@ class TweetDataEntryTool(QWidget):
                     self.tweet_df = pd.read_json(f)
                 self.tweet_df.sort_values(by=['retweets'], ascending=False, inplace=True, ignore_index=True)
                 
+                list_keys = list(self.dict_features.keys())
+                for this_id in self.tweet_df["id"].values:
+                    if str(this_id) not in list_keys:
+                        self.dict_features[str(this_id)] = {}
+                    
                 # Set window
                 self.setWindowTitle("Trump Tweet Data Entry Tool")
                 self.resize(1008, 756)
@@ -96,6 +101,7 @@ class TweetDataEntryTool(QWidget):
                 # Load features into cells
                 for i in range(NUM_WINDOWS):
                     exec("self.textEdit{i} = QTextEdit()".format(i=i))
+                    exec("self.textEdit{i}.textChanged.connect(self.onFeatureChange)".format(i=i))
                     exec("self.layout_left.addWidget(self.textEdit{i})".format(i=i))
                     exec("self.textEdit{i}.resize(100, 250)".format(i=i))
                 self.populate_features()
@@ -105,7 +111,7 @@ class TweetDataEntryTool(QWidget):
         # Reload features and references into the text edit boxes
         def populate_features(self):
             
-            features_and_references = self.dict_features[self.this_id] 
+            features_and_references = self.dict_features[self.this_id]
             list_keys = list(features_and_references.keys())
             
             for i in range(NUM_WINDOWS):
@@ -163,7 +169,17 @@ class TweetDataEntryTool(QWidget):
                         
         # Update self.dict_features and save the file once a change is made to the feature or reference URL
         def onFeatureChange(self):
-            pass
+            for i in range(NUM_WINDOWS):
+                exec("self.this_list = self.textEdit{i}.toPlainText().split({char})".format(char="\n", i=i))
+                
+                if self.this_list:
+                    if len(self.this_list) == 1:
+                        self.dict_features[self.this_id] = {self.this_list[0]: []}
+                    else:
+                        self.dict_features[self.this_id] = {self.this_list[0]: self.this_list[1:-1]}                    
+            
+            with open("more_features.json", 'w') as f:
+                json.dump(self.dict_features, f)
 
 if __name__ == '__main__':
         app = QApplication(sys.argv)
