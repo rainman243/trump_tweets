@@ -52,7 +52,7 @@ class TweetDataEntryTool(QWidget):
                 self.btnPressSave.setFont(self.this_font)
                 self.btnPressFwd.clicked.connect(self.btnPressFwd_Clicked)
                 self.btnPressBack.clicked.connect(self.btnPressBack_Clicked)
-                self.btnPressBack.clicked.connect(self.btnPressSave_Clicked)
+                self.btnPressSave.clicked.connect(self.btnPressSave_Clicked)
                 
                 # Add layouts
                 self.layout_main = QHBoxLayout()
@@ -64,6 +64,7 @@ class TweetDataEntryTool(QWidget):
                 # Add forward/back buttons
                 self.layout_right.addWidget(self.btnPressFwd)
                 self.layout_right.addWidget(self.btnPressBack)
+                self.layout_right.addWidget(self.btnPressSave)
                 
                 # Select current tweet
                 self.this_tweet = QLabel()
@@ -78,7 +79,7 @@ class TweetDataEntryTool(QWidget):
                 self.whitelist_features_label = QTextEdit()
                 self.whitelist_features_label.setText("Whitelist Features: " + ", ".join(self.feature_whitelist))
                 self.whitelist_features_label.setFont(self.this_font)
-                self.whitelist_features_label.setFixedSize(500, 700)
+                self.whitelist_features_label.setFixedSize(500, 500)
                 self.layout_right.addWidget(self.whitelist_features_label)
                 
                 #tAdd tweet number from top RT tweets (0 = highest RTs)
@@ -104,7 +105,8 @@ class TweetDataEntryTool(QWidget):
                 # Load features into cells
                 for i in range(NUM_WINDOWS):
                     exec("self.textEdit{i} = QTextEdit()".format(i=i))
-                    exec("self.textEdit{i}.textChanged.connect(self.onFeatureChange)".format(i=i))
+                    exec("self.textEdit{i}.cursorPositionChanged.connect(self.onFeatureChange)".format(i=i))
+                    exec("self.textEdit{i}.setObjectName('textEdit{i}')".format(i=i))
                     exec("self.layout_left.addWidget(self.textEdit{i})".format(i=i))
                     exec("self.textEdit{i}.resize(100, 250)".format(i=i))
                 self.populate_features()
@@ -131,7 +133,6 @@ class TweetDataEntryTool(QWidget):
             self.this_tweet.setText(str(self.tweet_df.loc[[self.this_tweet_num], ["text"]].values[0, 0]))
             self.enter_id.setText(self.this_id)
             self.tweet_num_enter.setText(str(self.this_tweet_num))
-
             
         # Set Tweet num
         def set_tweet_num(self, tweet_num):
@@ -177,14 +178,26 @@ class TweetDataEntryTool(QWidget):
                         
         # Update self.dict_features and save the file once a change is made to the feature or reference URL
         def onFeatureChange(self):
-            for i in range(NUM_WINDOWS):
-                exec("self.this_list = self.textEdit{i}.toPlainText().split({char})".format(char="\n", i=i))
+            if len(inspect.stack()) > 3:
+                return
+            
+            object_name = self.focusWidget().objectName()
+            if inspect.stack()[0][3] in ["onFeatureChange"] and object_name:
                 
+                exec("self.this_list = self.{obname}.toPlainText().split({char})".format(char="\n", obname=object_name))
                 if self.this_list:
-                    if len(self.this_list) == 1:
-                        self.dict_features[self.this_id] = {self.this_list[0]: []}
-                    else:
-                        self.dict_features[self.this_id] = {self.this_list[0]: self.this_list[1:-1]}                    
+                    this_feature = self.this_list[0]
+                    if (this_feature in self.feature_whitelist) or (this_feature == ""):
+                        if this_feature not in list(self.dict_features[self.this_id].keys()):
+                            p(self.this_list)
+                            self.dict_features[self.this_id][this_feature] = []
+
+                        if len(self.this_list) > 1:
+                            references = self.this_list[1:-1]
+                            if type(references) == str:
+                                references = [references]
+                            p(references)
+                            self.dict_features[self.this_id][self.this_list[0]].extend(references)                   
             
 
 if __name__ == '__main__':
