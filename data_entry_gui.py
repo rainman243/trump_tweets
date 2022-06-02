@@ -12,6 +12,7 @@ from pprint import pprint as p
 import inspect
 
 NUM_WINDOWS = 9
+NUM_TWEETS = 10000
 
 class TweetDataEntryTool(QWidget):
         
@@ -33,6 +34,7 @@ class TweetDataEntryTool(QWidget):
                 with open('tweets_01-08-2021.json', encoding='utf-8') as f:
                     self.tweet_df = pd.read_json(f)
                 self.tweet_df.sort_values(by=['retweets'], ascending=False, inplace=True, ignore_index=True)
+                self.tweet_df.drop(index=range(NUM_TWEETS - 1, len(self.tweet_df)), inplace=True)
                 
                 list_keys = list(self.dict_features.keys())
                 for this_id in self.tweet_df["id"].values:
@@ -105,7 +107,8 @@ class TweetDataEntryTool(QWidget):
                 # Load features into cells
                 for i in range(NUM_WINDOWS):
                     exec("self.textEdit{i} = QTextEdit()".format(i=i))
-                    exec("self.textEdit{i}.cursorPositionChanged.connect(self.onFeatureChange)".format(i=i))
+                    exec("self.textEdit{i}.textChanged.connect(self.onFeatureChange)".format(i=i))
+                    exec("self.textEdit{i}.cursorPositionChanged.connect(self.onCursorChange)".format(i=i))
                     exec("self.textEdit{i}.setObjectName('textEdit{i}')".format(i=i))
                     exec("self.layout_left.addWidget(self.textEdit{i})".format(i=i))
                     exec("self.textEdit{i}.resize(100, 250)".format(i=i))
@@ -126,13 +129,16 @@ class TweetDataEntryTool(QWidget):
                     set_text = "{feature}\n".format(feature=list_keys[i])
                     set_text += "{reference_list}".format(reference_list=reference_list_str)
                     exec("self.textEdit{i}.setPlainText(set_text)".format(i=i))
+                    
                 else:
                     set_text = ""
                     exec("self.textEdit{i}.setPlainText(set_text)".format(i=i))
-                    
-            self.this_tweet.setText(str(self.tweet_df.loc[[self.this_tweet_num], ["text"]].values[0, 0]))
+            tweet_str = str(self.tweet_df.loc[[self.this_tweet_num], ["text"]].values[0, 0]) + " "
+            tweet_str += str(self.tweet_df.loc[[self.this_tweet_num], ["date"]].values[0, 0])[0:10]
+            self.this_tweet.setText(tweet_str)
             self.enter_id.setText(self.this_id)
             self.tweet_num_enter.setText(str(self.this_tweet_num))
+            self.dict_features["last_position"] = str(self.this_tweet_num)
             
         # Set Tweet num
         def set_tweet_num(self, tweet_num):
@@ -176,7 +182,7 @@ class TweetDataEntryTool(QWidget):
             if inspect.stack()[0][3] in ["txtTweetNum_Change"]:
                 self.set_tweet_num(int(self.tweet_num_enter.toPlainText()))
                         
-        # Update self.dict_features and save the file once a change is made to the feature or reference URL
+        # Update self.dict_features once a change is made to the feature or reference URL
         def onFeatureChange(self):
             if len(inspect.stack()) > 3:
                 return
@@ -185,21 +191,36 @@ class TweetDataEntryTool(QWidget):
             if inspect.stack()[0][3] in ["onFeatureChange"] and object_name:
                 
                 exec("self.this_list = self.{obname}.toPlainText().split({char})".format(char="\n", obname=object_name))
+                
                 if self.this_list:
                     this_feature = self.this_list[0]
-                    if (this_feature in self.feature_whitelist) or (this_feature == ""):
+                    if this_feature in self.feature_whitelist:
                         if this_feature not in list(self.dict_features[self.this_id].keys()):
-                            p(self.this_list)
                             self.dict_features[self.this_id][this_feature] = []
 
                         if len(self.this_list) > 1:
                             references = self.this_list[1:-1]
                             if type(references) == str:
                                 references = [references]
-                            p(references)
-                            self.dict_features[self.this_id][self.this_list[0]].extend(references)                   
+                            self.dict_features[self.this_id][this_feature].extend(references)    
+                else:
+                    exec("del self.dict_features[self.this_id][self.{obname}.last_feature]".format(obname=object_name))
+        
+        # Save last feature selected, if any.
+        def onCursorChange(self):
+            if len(inspect.stack()) > 3:
+                            return
             
-
+            object_name = self.focusWidget().objectName()
+            if inspect.stack()[0][3] in ["onCursorChange"] and object_name:
+                exec("self.this_list = self.{obname}.toPlainText().split({char})".format(char="\n", obname=object_name))
+                
+                if self.this_list:
+                    this_feature = self.this_list[0]
+                    if this_feature in self.feature_whitelist:
+                        exec("self.{obname}.last_feature = this_feature".format(obname=object_name))
+              
+                              
 if __name__ == '__main__':
         app = QApplication(sys.argv)
         win = TweetDataEntryTool()
