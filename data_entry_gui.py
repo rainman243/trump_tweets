@@ -202,7 +202,7 @@ class TweetDataEntryTool(QWidget):
                             references = self.this_list[1:-1]
                             if type(references) == str:
                                 references = [references]
-                            self.dict_features[self.this_id][this_feature].extend(references)    
+                            self.dict_features[self.this_id][this_feature] = references  
                 else:
                     exec("del self.dict_features[self.this_id][self.{obname}.last_feature]".format(obname=object_name))
         
