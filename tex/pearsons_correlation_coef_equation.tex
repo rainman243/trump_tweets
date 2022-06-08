@@ -4,13 +4,14 @@
 \documentclass{article}
 \usepackage{mathtools}
 \usepackage{amssymb}
+\DeclareMathOperator*{\E}{\mathbb{E}}
 
 
 \begin{document}
     \begin{flalign}
-        \DeclareMathOperator*{\E}{\mathbb{E}}
-        \mathbb{\rho_{X, Y} & =\frac{\E{XY} - \E{X|\E{Y}}{\sqrt{\E{X} \sqrt{}}}
+        \rho_{X, Y} &= \frac{ \E{[XY]} - \E{[X]}\E{[Y]} }{ \sqrt{ \E{[X^{2}]} - (\E{[X]})^{2} } \sqrt{ \E{[Y^{2}]}- (\E{[Y]})^{2} } } \\
+                    &= \frac{ \E{[(X - \mu_X)(Y - \mu_Y)]} }{ \sigma_X \sigma_Y } \\
+                    &= \frac{ cov(X, Y) }{ \sigma_X \sigma_Y }
     \end{flalign}
-    \Exp{A \mid B}
 \end{document}
 
