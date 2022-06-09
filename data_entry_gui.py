@@ -82,6 +82,7 @@ class TweetDataEntryTool(QWidget):
                 self.whitelist_features_label.setText("Whitelist Features: " + ", ".join(self.feature_whitelist))
                 self.whitelist_features_label.setFont(self.this_font)
                 self.whitelist_features_label.setFixedSize(500, 500)
+                self.whitelist_features_label.setReadOnly(True)
                 self.layout_right.addWidget(self.whitelist_features_label)
                 
                 #tAdd tweet number from top RT tweets (0 = highest RTs)
@@ -183,6 +184,7 @@ class TweetDataEntryTool(QWidget):
                 self.set_tweet_num(int(self.tweet_num_enter.toPlainText()))
                         
         # Update self.dict_features once a change is made to the feature or reference URL
+        # TODO: data_entry_gui_test.test_onFeatureChange(self)
         def onFeatureChange(self):
             if len(inspect.stack()) > 3:
                 return
