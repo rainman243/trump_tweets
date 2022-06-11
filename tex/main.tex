@@ -10,12 +10,22 @@
 \usepackage{mathtools}
 \usepackage{amssymb}
 
+% Expectation operator
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
 \begin{document}
-    \title{Trump's Top 496 Tweets Since He Started Running for President, by Retweet}
+    \title{Trump's Top 10,000 Tweets Since He Started Running for President, by Retweet (WIP)}
     \author{Matthew Woods (mattwoods243@outlook.com)}
     \maketitle
     
-    \input{pearsons_correlation_coef_equation.tex}
+    % Pearson's correlation coefficient: see wikipedia.com
+    %     https://en.wikipedia.org/wiki/Pearson_correlation_coefficient#Definition
+    %     See Expectation Operator (Expected Value): https://en.wikipedia.org/wiki/Expected_value
+    \begin{flalign}
+        \rho_{X, Y} &= \frac{\E{[XY]} - \E{[X]}\E{[Y]}}{\sqrt{\E{[X^{2}]} - (\E{[X]})^{2}} \sqrt{\E{[Y^{2}]}- (\E{[Y]})^{2}}} \\
+                    &= \frac{\E{[(X - \mu_X)(Y - \mu_Y)]}}{\sigma_X \sigma_Y} \\
+                    &= \frac{cov(X, Y)}{\sigma_X \sigma_Y}
+    \end{flalign}
     
     \begin{figure}
          \hspace{-1.5cm}
@@ -29,7 +39,6 @@
          \includegraphics[scale=.8]{corr_heatmap.pdf}
          \caption{Matrix visualization of Pearson\'s correlation coefficient.}
     \end{figure}
-   
     
-    
+
 \end{document}

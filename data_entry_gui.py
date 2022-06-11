@@ -35,8 +35,14 @@ class TweetDataEntryTool(QWidget):
                 # Load tweets
                 with open('tweets_01-08-2021.json', encoding='utf-8') as f:
                     self.tweet_df = pd.read_json(f)
+                
+                # Drop before Trump ran for President
+                is_president_or_running_for_president = self.tweet_df['date'] < '2015-06-16'
+                self.tweet_df = self.tweet_df.loc[np.invert(is_president_or_running_for_president)]
+                
+                # Sort by RT descending
                 self.tweet_df.sort_values(by=['retweets'], ascending=False, inplace=True, ignore_index=True)
-                self.tweet_df.drop(index=range(NUM_TWEETS - 1, len(self.tweet_df)), inplace=True)
+                self.tweet_df.drop(index=range(NUM_TWEETS, len(self.tweet_df)), inplace=True)
                 
                 list_keys = list(self.dict_features.keys())
                 for this_id in self.tweet_df["id"].values:
