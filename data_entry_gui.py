@@ -3,7 +3,6 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QComboBox
 from PyQt5.QtGui import QFont
 import json
-from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 import sys
@@ -20,6 +19,9 @@ class TweetDataEntryTool(QWidget):
                 super().__init__(parent)
                 
                 self.this_font = QFont('cm', 16)
+                self.this_list = []
+                self.last_feature = ""
+                self.last_references = []
                 
                 # Load labels
                 with open("more_features.json") as f:
@@ -69,12 +71,12 @@ class TweetDataEntryTool(QWidget):
                 self.layout_right.addWidget(self.btnPressSave)
                 
                 # Select current tweet
-                self.this_tweet = QLabel()
-                self.this_tweet.setFixedSize(756, 250) 
+                self.this_tweet = QTextEdit()
+                self.this_tweet.setFixedSize(756, 250)
+                self.this_tweet.setReadOnly(True)
                 self.this_id = str(self.tweet_df.loc[[self.this_tweet_num], ["id"]].values[0, 0])
                 self.this_tweet.setText(self.tweet_df.loc[[self.this_tweet_num], ["text"]].values[0, 0])
                 self.this_tweet.setFont(self.this_font)
-                self.this_tweet.setWordWrap(True)
                 self.layout_left.addWidget(self.this_tweet)
                 
                 # Add whitelist features 
@@ -109,8 +111,8 @@ class TweetDataEntryTool(QWidget):
                 for i in range(NUM_WINDOWS):
                     exec("self.textEdit{i} = QTextEdit()".format(i=i))
                     exec("self.textEdit{i}.textChanged.connect(self.onFeatureChange)".format(i=i))
-                    exec("self.textEdit{i}.cursorPositionChanged.connect(self.onCursorChange)".format(i=i))
                     exec("self.textEdit{i}.setObjectName('textEdit{i}')".format(i=i))
+                    exec("self.textEdit{i}.last_feature = ''".format(i=i))
                     exec("self.layout_left.addWidget(self.textEdit{i})".format(i=i))
                     exec("self.textEdit{i}.resize(100, 250)".format(i=i))
                 self.populate_features()
@@ -156,11 +158,11 @@ class TweetDataEntryTool(QWidget):
         
         # Advance to next tweet by decreasing RT
         def btnPressFwd_Clicked(self):
-                self.set_tweet_num(int(self.tweet_num_enter.toPlainText()) + 1)
+            self.set_tweet_num(int(self.tweet_num_enter.toPlainText()) + 1)
 
         # Go back to previous tweet
         def btnPressBack_Clicked(self):
-                self.set_tweet_num(int(self.tweet_num_enter.toPlainText()) - 1)   
+            self.set_tweet_num(int(self.tweet_num_enter.toPlainText()) - 1)   
         
         # Save current state
         def btnPressSave_Clicked(self):
@@ -189,39 +191,51 @@ class TweetDataEntryTool(QWidget):
             if len(inspect.stack()) > 3:
                 return
             
+            # Get calling widget name set during init
             object_name = self.focusWidget().objectName()
+            
+            # Check that the calling function is not some other internal gui function
             if inspect.stack()[0][3] in ["onFeatureChange"] and object_name:
                 
+                # Get list of single feature and references
                 exec("self.this_list = self.{obname}.toPlainText().split({char})".format(char="\n", obname=object_name))
                 
+                # Assuming something was entered
                 if self.this_list:
-                    this_feature = self.this_list[0]
+                    p(self.this_list)
+                    
+                    # First item is the feature
+                    this_feature = self.this_list.pop(0)
+                    p(self.this_list)
+                    
+                    # Check if feature is valid
                     if this_feature in self.feature_whitelist:
+                        
+                        # Check if feature is already in the dict for this tweet ID
+                        # If not, create an empty list of references
                         if this_feature not in list(self.dict_features[self.this_id].keys()):
                             self.dict_features[self.this_id][this_feature] = []
+                        
+                        # If references are entered, input them into dict_features
+                        if self.this_list:
 
-                        if len(self.this_list) > 1:
-                            references = self.this_list[1:-1]
-                            if type(references) == str:
-                                references = [references]
-                            self.dict_features[self.this_id][this_feature].extend(references)  
-                else:
-                    exec("del self.dict_features[self.this_id][self.{obname}.last_feature]".format(obname=object_name))
-        
-        # Save last feature selected, if any.
-        def onCursorChange(self):
-            if len(inspect.stack()) > 3:
-                            return
-            
-            object_name = self.focusWidget().objectName()
-            if inspect.stack()[0][3] in ["onCursorChange"] and object_name:
-                exec("self.this_list = self.{obname}.toPlainText().split({char})".format(char="\n", obname=object_name))
+                            self.dict_features[self.this_id][this_feature] = self.this_list
+
+                            p(self.this_list)
+                            p(self.dict_features[self.this_id][this_feature])
+                            p(this_feature)
+                            p("onFeatureChange: references updated in dict_features")
                 
-                if self.this_list:
-                    this_feature = self.this_list[0]
-                    if this_feature in self.feature_whitelist:
                         exec("self.{obname}.last_feature = this_feature".format(obname=object_name))
-              
+
+
+                # Delete the feature from the file if it is erased in the gui                    
+                else:
+                    try:
+                        exec("del self.dict_features[self.this_id][self.{obname}.last_feature]".format(obname=object_name))
+                    except:
+                        pass
+           
                               
 if __name__ == '__main__':
         app = QApplication(sys.argv)
