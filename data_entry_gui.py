@@ -12,6 +12,7 @@ import inspect
 
 NUM_WINDOWS = 9
 NUM_TWEETS = 10000
+MIN_TWEETS_PER_FEATURE = 3
 
 class TweetDataEntryTool(QWidget):
         
@@ -90,7 +91,7 @@ class TweetDataEntryTool(QWidget):
                 self.whitelist_features_title.setText("Whitelist Features: ")
                 self.whitelist_features_title.setFont(self.this_font)
                 self.whitelist_features_label = QTextEdit()
-                self.whitelist_features_label.setText(", ".join(self.feature_whitelist))
+                self.whitelist_features_label.setText(", ".join(sorted(self.feature_whitelist)))
                 self.whitelist_features_label.setFont(self.this_font)
                 self.whitelist_features_label.setFixedSize(500, 500)
                 self.whitelist_features_label.setReadOnly(True)
@@ -162,7 +163,6 @@ class TweetDataEntryTool(QWidget):
             self.this_tweet_num = tweet_num
             self.this_id = str(self.tweet_df.loc[[self.this_tweet_num], ["id"]].values[0, 0])
             self.populate_features()
-
             
         # Set Tweet ID
         def set_tweet_id(self, tweet_id):
@@ -191,16 +191,15 @@ class TweetDataEntryTool(QWidget):
             if inspect.stack()[0][3] in ["txtTweetId_Change"]:
                 self.set_tweet_id(self.enter_id.toPlainText())
                             
-        # Select tweet by RT order
+        # Select tweet by highest RT order
         def txtTweetNum_Change(self):
             if len(inspect.stack()) > 3:
                 return
             
             if inspect.stack()[0][3] in ["txtTweetNum_Change"]:
                 self.set_tweet_num(int(self.tweet_num_enter.toPlainText()))
-                # Save last feature selected, if any.
         
-        # Keep track of previous feature
+        # Keep track of last feature
         def onCursorChange(self):
             if len(inspect.stack()) > 3:
                             return
@@ -214,12 +213,14 @@ class TweetDataEntryTool(QWidget):
                         this_feature = self.this_list[0]
                         if (this_feature in self.feature_whitelist) or (this_feature == "none"):
                             exec("self.{obname}.last_feature = this_feature".format(obname=object_name))
-                        
+                                
         # Update self.dict_features once a change is made to the feature or reference URL
         # TODO: data_entry_gui_test.test_onFeatureChange(self)
         def onFeatureChange(self):
+            p("onFeatureChange")
             if len(inspect.stack()) > 3:
                 return
+            p(inspect.stack())
             
             # Get calling widget name set during init
             object_name = self.focusWidget().objectName()
@@ -230,21 +231,20 @@ class TweetDataEntryTool(QWidget):
                 # Get list of single feature and references
                 exec("self.this_list = self.{obname}.toPlainText().split({char})".format(char="\n", obname=object_name))
                 
-                # Assuming something was entered
+                # Check if anything is entered
                 if self.this_list:
-                    p(self.this_list)
-                    
+                        
                     # First item is the feature
                     this_feature = self.this_list.pop(0)
-                    p(self.this_list)
                     
                     # Check if feature is valid
                     if this_feature in self.feature_whitelist:
                         
                         # Check if feature is already in the dict for this tweet ID
                         # If not, create an empty list of references
-                        if this_feature not in list(self.dict_features[self.this_id].keys()):
+                        if (this_feature not in list(self.dict_features[self.this_id].keys())):
                             self.dict_features[self.this_id][this_feature] = []
+                            p("passed whitelist: " + this_feature)
                         
                         # If references are entered, input them into dict_features
                         if self.this_list:
@@ -259,11 +259,12 @@ class TweetDataEntryTool(QWidget):
                         if this_feature:
                             exec("self.{obname}.last_feature = this_feature".format(obname=object_name))
 
-
-                # Delete the feature from the file if it is erased in the gui                    
+                # Delete the feature from the file if it is erased in the gui                
                 else:
                     try:
+                        p("deleting from dict features")
                         exec("del self.dict_features[self.this_id][self.{obname}.last_feature]".format(obname=object_name))
+                        p(self.dict_features[self.this_id])
                         
                     except Exception as e:
                         p(e)

@@ -38,7 +38,6 @@
     "isLügenpresse",
     "isDolchstoßlegende",
     "isReichstagsgebäude",
-    "isSchutzstaffel",
     "isSchadenfreude",
     "isBullying",
     "isThreatening",
@@ -52,5 +51,6 @@
     "isIronic",
     "isKobraKai",
     "isWilliamWallace",
-    "isBrokenLink"
+    "isBrokenLink",
+    "isSelfAccount"
 ]
