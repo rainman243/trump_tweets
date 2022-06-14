@@ -12,7 +12,6 @@ import inspect
 
 NUM_WINDOWS = 9
 NUM_TWEETS = 10000
-MIN_TWEETS_PER_FEATURE = 3
 
 class TweetDataEntryTool(QWidget):
         
@@ -48,7 +47,7 @@ class TweetDataEntryTool(QWidget):
                 list_keys = list(self.dict_features.keys())
                 for this_id in self.tweet_df["id"].values:
                     if str(this_id) not in list_keys:
-                        self.dict_features[str(this_id)] = {"none": []}
+                        self.dict_features[str(this_id)] = {"none": ""}
                     
                 # Set window
                 self.setWindowTitle("Trump Tweet Data Entry Tool")
@@ -141,10 +140,8 @@ class TweetDataEntryTool(QWidget):
             
             for i in range(NUM_WINDOWS):
                 if i < len(features_and_references):
-                    this_reference_list = features_and_references[list_keys[i]]
-                    reference_list_str = ", ".join(this_reference_list)
                     set_text = "{feature}\n".format(feature=list_keys[i])
-                    set_text += "{reference_list}".format(reference_list=reference_list_str)
+                    set_text += "{reference_str}".format(reference_str=features_and_references[list_keys[i]])
                     exec("self.textEdit{i}.setPlainText(set_text)".format(i=i))
                     
                 else:
@@ -211,8 +208,9 @@ class TweetDataEntryTool(QWidget):
 
                     if self.this_list:
                         this_feature = self.this_list[0]
-                        if (this_feature in self.feature_whitelist) or (this_feature == "none"):
+                        if this_feature in self.feature_whitelist + ["none"]:
                             exec("self.{obname}.last_feature = this_feature".format(obname=object_name))
+                            p("last feature = " + this_feature)
                                 
         # Update self.dict_features once a change is made to the feature or reference URL
         # TODO: data_entry_gui_test.test_onFeatureChange(self)
@@ -229,29 +227,39 @@ class TweetDataEntryTool(QWidget):
             if inspect.stack()[0][3] in ["onFeatureChange"] and object_name:
                 
                 # Get list of single feature and references
-                exec("self.this_list = self.{obname}.toPlainText().split({char})".format(char="\n", obname=object_name))
+                exec("self.this_list = self.{obname}.toPlainText().split({char})".format(
+                    char="\n", 
+                    maxsplit=1, 
+                    obname=object_name)
+                    )
                 
+                p(self.last_feature)
                 # Check if anything is entered
                 if self.this_list:
-                        
+                    
+                    p(self.this_list)
                     # First item is the feature
                     this_feature = self.this_list.pop(0)
                     
                     # Check if feature is valid
-                    if this_feature in self.feature_whitelist:
+                    if this_feature in self.feature_whitelist or this_feature == "none":
                         
+                        p("passed whitelist: " + this_feature)
                         # Check if feature is already in the dict for this tweet ID
                         # If not, create an empty list of references
                         if (this_feature not in list(self.dict_features[self.this_id].keys())):
-                            self.dict_features[self.this_id][this_feature] = []
-                            p("passed whitelist: " + this_feature)
-                        
+                            self.dict_features[self.this_id][this_feature] = ""
+                            
+                        # The feature already exists dict for this tweet. Remove "none" if len > 1.
+                        # This indicates that the tweet has been reviewed.
+                        current_features = list(self.dict_features[self.this_id].keys())
+                        if "none" in current_features and len(self.dict_features[self.this_id]) > 1:
+                            exec("del self.dict_features[self.this_id]['none']".format(obname=object_name))
+                            p("deleted none from dict_features")
+
                         # If references are entered, input them into dict_features
                         if self.this_list:
-
-                            self.dict_features[self.this_id][this_feature] = self.this_list
-
-                            p(self.this_list)
+                            self.dict_features[self.this_id][this_feature] = self.this_list.pop(0)
                             p(self.dict_features[self.this_id][this_feature])
                             p(this_feature)
                             p("onFeatureChange: references updated in dict_features")
