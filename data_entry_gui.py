@@ -215,10 +215,8 @@ class TweetDataEntryTool(QWidget):
         # Update self.dict_features once a change is made to the feature or reference URL
         # TODO: data_entry_gui_test.test_onFeatureChange(self)
         def onFeatureChange(self):
-            p("onFeatureChange")
             if len(inspect.stack()) > 3:
                 return
-            p(inspect.stack())
             
             # Get calling widget name set during init
             object_name = self.focusWidget().objectName()
