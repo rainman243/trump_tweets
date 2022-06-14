@@ -263,6 +263,9 @@ class TweetDataEntryTool(QWidget):
                             p(self.dict_features[self.this_id][this_feature])
                             p(this_feature)
                             p("onFeatureChange: references updated in dict_features")
+                        
+                        else:
+                            self.dict_features[self.this_id][this_feature] = ""
                             
                         if this_feature:
                             exec("self.{obname}.last_feature = this_feature".format(obname=object_name))
