@@ -195,13 +195,19 @@ class TweetDataEntryTool(QWidget):
             if self.focusWidget():
                 object_name = self.focusWidget().objectName()
                 if inspect.stack()[0][3] in ["onCursorChange"] and object_name:
-                    exec("self.this_list = self.{obname}.toPlainText().split({char})".format(char="\n", obname=object_name))
-
+                    exec("p(self.{obname}.toPlainText())".format(obname=object_name))
+                    exec("self.this_list = self.{obname}.toPlainText().split({char})".format(
+                    char=r'"\n"', 
+                    maxsplit=1, 
+                    obname=object_name)
+                    )
+                    
                     if self.this_list:
                         this_feature = self.this_list[0]
                         if this_feature in self.feature_whitelist + ["none"]:
                             exec("self.{obname}.last_feature = this_feature".format(obname=object_name))
                             p("last feature = " + this_feature)
+                            p(self.this_list)
                                 
         # Update self.dict_features once a change is made to the feature or reference URL
         # TODO: data_entry_gui_test.test_onFeatureChange(self)
@@ -226,7 +232,6 @@ class TweetDataEntryTool(QWidget):
                 # Check if anything is entered
                 if self.this_list:
                     
-                    p(self.this_list)
                     # First item is the feature
                     this_feature = self.this_list.pop(0)
                     
@@ -235,7 +240,7 @@ class TweetDataEntryTool(QWidget):
                         
                         p("passed whitelist: " + this_feature)
                         # Check if feature is already in the dict for this tweet ID
-                        # If not, create an empty list of references
+                        # If not, initialize an empty string for references
                         if (this_feature not in list(self.dict_features[self.this_id].keys())):
                             self.dict_features[self.this_id][this_feature] = ""
                             
@@ -248,7 +253,7 @@ class TweetDataEntryTool(QWidget):
 
                         # If references are entered, input them into dict_features
                         if self.this_list:
-                            self.dict_features[self.this_id][this_feature] = self.this_list.pop(0)
+                            self.dict_features[self.this_id][this_feature] = " ".join(self.this_list)
                             p(self.dict_features[self.this_id][this_feature])
                             p(this_feature)
                             p("onFeatureChange: references updated in dict_features")
