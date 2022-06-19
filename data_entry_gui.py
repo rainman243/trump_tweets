@@ -169,7 +169,7 @@ class TweetDataEntryTool(QWidget):
         # Save current state
         def btnPressSave_Clicked(self):
             with open("more_features.json", 'w') as f:
-                json.dump(self.dict_features, f)
+                json.dump(self.dict_features, f, indent=3)
             
         # Select tweet by tweet ID
         def txtTweetId_Change(self):
